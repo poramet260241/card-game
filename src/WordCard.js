@@ -3,6 +3,7 @@ import './App.css';
 
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
+import { get } from 'http';
 
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
@@ -14,7 +15,6 @@ const prepareStateFromWord = (given_word) => {
         attempt: 1,
         guess: [],
         completed: false,
-        requestAns: false
     }
 }
 
@@ -41,11 +41,8 @@ export default class WordCard extends Component {
             }
             else if(guess.length == this.state.chars.length && this.state.attempt >= 5){
                 document.getElementById('statusBar').innerHTML = `GAME OVER!`
+                document.getElementById('answerBar').innerHTML = `Answer is ${this.state.word}`
             }
-    }
-
-    showAnswer = () => {
-        document.getElementById('answerBar').innerHTML = `Answer is ${this.state.word}`
     }
        
 

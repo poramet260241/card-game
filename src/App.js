@@ -9,12 +9,6 @@ class App extends Component {
     window.location.reload(false);
   }
 
-  requstAns = () => {
-    this.setState({
-      requstAns : true
-    })
-  }
-
   render() {
 
     return (
@@ -26,7 +20,6 @@ class App extends Component {
         <button id = 'newgameBtn' onClick = {this.reload}>New Game</button>
         <br></br>
         <br></br>
-        <button id = 'surrenderBtn'>Surrender</button>
         <p className = 'Status' id = 'answerBar'></p>
 
     </div>
