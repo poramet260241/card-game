@@ -9,6 +9,12 @@ class App extends Component {
     window.location.reload(false);
   }
 
+  requstAns = () => {
+    this.setState({
+      requstAns : true
+    })
+  }
+
   render() {
 
     return (

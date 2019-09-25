@@ -13,7 +13,8 @@ const prepareStateFromWord = (given_word) => {
         chars,
         attempt: 1,
         guess: [],
-        completed: false
+        completed: false,
+        requestAns: false
     }
 }
 
@@ -29,13 +30,18 @@ export default class WordCard extends Component {
             this.setState({guess})
             if(guess.length == this.state.chars.length && this.state.attempt < 5){
                 if(guess.join('').toString() == this.state.word){
-                    this.setState({guess: [], completed: true})  
+                    this.setState({guess: [], completed: true})
+                    document.getElementById('statusBar').innerHTML = `COMPLETE!`
                 }
                 else{
-                    this.setState({guess: [], attempt: this.state.attempt + 1})     
+                    this.setState({guess: [], attempt: this.state.attempt + 1})
+                    document.getElementById('roundBar').innerHTML = `ROUND ${this.state.attempt+1}`
+                    
                 }
             }
-        
+            else if(guess.length == this.state.chars.length && this.state.attempt >= 5){
+                document.getElementById('statusBar').innerHTML = `GAME OVER!`
+            }
     }
 
     showAnswer = () => {
@@ -51,3 +57,5 @@ render() {
  );
  }
 }
+
+   
