@@ -32,6 +32,20 @@
  }
 
  .activeCard {
-  color: red;
-  background: pink;
+  color:sienna;
+  background: sandybrown;
+ }
+
+ .Title {
+   font-size: 5em;
+ }
+
+ .Description{
+   font-size: 2em;
+   color: green;
+ }
+ 
+ .Status{
+   font-size: 2em;
+   color: red;
  }
