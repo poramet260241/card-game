@@ -7,6 +7,7 @@ import _ from 'lodash';
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
+    console.log({word})
     return {
         word,
         chars,
@@ -24,23 +25,29 @@ export default class WordCard extends Component {
     }
 
     activationHandler = (c) => {
-        let guess = [...this.state.guess, c]
-        this.setState({guess})
-        if(guess.length == this.state.chars.length){
-        if(guess.join('').toString() == this.state.word){
-        this.setState({guess: [], completed: true})
-        }else{
-        this.setState({guess: [], attempt: this.state.attempt + 1})
-        }
-        }
-       }
+            let guess = [...this.state.guess, c]
+            this.setState({guess})
+            if(guess.length == this.state.chars.length && this.state.attempt < 5){
+                if(guess.join('').toString() == this.state.word){
+                    this.setState({guess: [], completed: true})  
+                }
+                else{
+                    this.setState({guess: [], attempt: this.state.attempt + 1})     
+                }
+            }
+        
+    }
+
+    showAnswer = () => {
+        document.getElementById('answerBar').innerHTML = `Answer is ${this.state.word}`
+    }
        
 
 render() {
  return (
- <div>
-{ Array.from(this.props.value).map((c, i) => <CharacterCard value={c} key={i} activationHandler={this.activationHandler}/>) }
- </div>
+    <div>
+        { Array.from(this.state.chars.join('').toString()).map((c, i) => <CharacterCard value={c} key={i} activationHandler={this.activationHandler} {...this.state}/>)}
+    </div>
  );
  }
 }
