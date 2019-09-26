@@ -44,12 +44,12 @@
 
  .Description{
    font-size: 2em;
-   color: green;
+   color: rgb(28, 155, 28);
  }
  
  .Status{
    font-size: 2em;
-   color: rgb(132, 252, 196);
+   color: rgb(255, 255, 255);
  }
 
  .button {
@@ -63,4 +63,8 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+body{
+  background-color: #6bffe1;
 }
