@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
         <div className = 'App'>
-            <p className = 'Description'>CREATE WORDS FROM THE FOLLOWING CHARACTERS</p>
+            <p className = 'texttitle'>CREATE WORDS FROM THE FOLLOWING CHARACTERS</p>
             <WordCard value={word[Math.floor((Math.random() * 4))]}/>
             <p className = 'Status' id = 'roundBar'>ROUND 1</p>
             <p className = 'Status' id = 'statusBar'> </p>
