@@ -45,7 +45,7 @@
 
  .Description{
    font-size: 2em;
-   color: rgb(28, 155, 28);
+   color: rgb(255, 255, 255);
  }
  
  .Status{
@@ -67,5 +67,5 @@
 }
 
 body{
-  background-color: #6bffe1;
+  background-image: url("http://wallpaperswide.com/download/colorful_rainbow_ink_in_water-wallpaper-1366x768.jpg");
 }
